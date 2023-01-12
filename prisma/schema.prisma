@@ -13,7 +13,7 @@ model User {
   name      String
   admin     Boolean  @default(false)
   createdAt DateTime @default(now())
-  Post      Post[]
+  posts     Post[]
 
   @@map("User")
 }
