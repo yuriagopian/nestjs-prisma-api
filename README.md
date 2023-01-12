@@ -71,3 +71,12 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+# Issues
+
+## Runing docker-compose up
+
+### Error exec: ".docker/entrypoint.sh": permission denied: unknown
+
+chmod +r docker-entrypoint.sh para permissões de leitura
+chmod +x docker-entrypoint.sh para permissões de execução
