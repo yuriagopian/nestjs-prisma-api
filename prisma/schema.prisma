@@ -13,6 +13,7 @@ model User {
   name      String
   admin     Boolean  @default(false)
   createdAt DateTime @default(now())
+  Post      Post[]
 
   @@map("User")
 }
@@ -24,4 +25,7 @@ model Post {
   content   String?
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
+
+  author   User? @relation(fields: [authorId], references: [id])
+  authorId Int?
 }
