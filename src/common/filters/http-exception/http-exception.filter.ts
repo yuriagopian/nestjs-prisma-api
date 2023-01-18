@@ -20,7 +20,7 @@ export class HttpExceptionFilter<T extends HttpException>
 
     const errorType = typeof response;
     if (errorType === 'string') {
-      return { message: exceptionResponse, status: response.status };
+      return { message: exceptionResponse, status };
     }
 
     return exceptionResponse as object;
