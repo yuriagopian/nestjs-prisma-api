@@ -3,10 +3,8 @@ import {
   NestInterceptor,
   ExecutionContext,
   CallHandler,
-  NotFoundException,
 } from '@nestjs/common';
 import { catchError, Observable } from 'rxjs';
-import { NotFoundError } from '../types/NotFoundError';
 
 @Injectable()
 export class DatabaseInterceptor implements NestInterceptor {
