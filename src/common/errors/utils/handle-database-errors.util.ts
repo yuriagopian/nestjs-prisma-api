@@ -1,3 +1,4 @@
+import { DatabaseError } from '../types/DatabaseError';
 import { PrismaClientError } from '../types/PrismaClientError';
 import { UniqueConstraintError } from '../types/UniqueConstraintError';
 
@@ -9,5 +10,8 @@ export const handleDatabaseErrors = (e: PrismaClientError): Error => {
   switch (e.errorCode) {
     case PrismaErrors.UniqueConstraintFail:
       return new UniqueConstraintError(e);
+
+    default:
+      return new DatabaseError(e.message);
   }
 };
