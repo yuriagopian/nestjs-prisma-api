@@ -18,7 +18,6 @@ export class DatabaseInterceptor implements NestInterceptor {
         if (isPrismaError(error)) {
           error = handleDatabaseErrors(error);
         }
-
         if (error instanceof DatabaseError) {
           throw new BadRequestException(error.message);
         } else {

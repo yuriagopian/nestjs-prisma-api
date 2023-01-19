@@ -1,7 +1,5 @@
-import { PrismaClientInitializationError } from '@prisma/client/runtime';
+import { PrismaClientKnownRequestError } from '@prisma/client/runtime';
 
-export type PrismaClientError = PrismaClientInitializationError & {
-  meta?: {
-    target: string;
-  };
+export type PrismaClientError = PrismaClientKnownRequestError & {
+  meta?: { target: string };
 };
