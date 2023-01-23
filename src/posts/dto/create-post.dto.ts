@@ -11,5 +11,5 @@ export class CreatePostDto {
 
   @IsNotEmpty()
   @IsEmail()
-  authorId: number;
+  authorEmail: string;
 }
